@@ -86,7 +86,7 @@ const GOOGLE_FORM_ACTION='https://docs.google.com/forms/d/e/1FAIpQLScH93nCf0_R0Z
 function sendResultToTeacher(result){
  const data=new URLSearchParams();
  data.append('entry.181582861',result.student?.name||'');
- data.append('entry.1093421081',result.student?.section||'');
+ data.append('entry.1093421081',result.student?.section==='6/1'?'سادس 1':result.student?.section==='6/2'?'سادس 2':result.student?.section==='6/3'?'سادس 3':result.student?.section||'');
  data.append('entry.267021455',String(result.score??''));
  data.append('entry.1319941491',String(result.pct??''));
  data.append('entry.638278164',result.level||'');
